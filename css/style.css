@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+/* --- 1. GLOBAL RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Fallback color matching the bottom of your texture, just in case the text goes longer than 9600px */
+    background-color: #f9f9f9; 
+    
+    /* The path to your massive texture image */
+    background-image: url('../assets/bg-texture.jpg'); 
+    
+    /* Starts the image at the very top center of the screen */
+    background-position: top center; 
+    
+    /* Prevents the image from tiling */
+    background-repeat: no-repeat;
+    
+    /* CRUCIAL: Forces the image to exactly match the width of the phone/browser, letting the 9600px height scale proportionally down the page */
+    background-size: 100% auto; 
+    
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- 2. TYPOGRAPHY HOOKS --- */
+.script-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5rem; /* Large and elegant for Ricardo & Zafiro */
+    font-weight: 400;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.serif-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.body-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+.parents-list {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.parents-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.8;
+    margin-top: 15px;
+}
