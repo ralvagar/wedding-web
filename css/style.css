@@ -1,5 +1,19 @@
 @charset "utf-8";
 /* CSS Document */
+/* --- CUSTOM FONT DECLARATIONS --- */
+@font-face {
+    font-family: 'WeddingRegular';
+    src: url('../fonts/MinionPro-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WeddingCursive';
+    src: url('../fonts/Runethia.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 /* --- 1. GLOBAL RESET & BASE STYLES --- */
 * {
     margin: 0;
@@ -12,7 +26,7 @@ body {
     background-color: #f9f9f9; 
     
     /* The path to your massive texture image */
-    background-image: url('../assets/bg-texture.jpg'); 
+    background-image: url(C:/Users/Ricardo/Desktop/wedding-invite-web/assets/); 
     
     /* Starts the image at the very top center of the screen */
     background-position: top center; 
@@ -33,32 +47,37 @@ body {
 
 /* --- 2. TYPOGRAPHY HOOKS --- */
 .script-title {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'WeddingCursive', cursive;
     font-size: 3.5rem; /* Large and elegant for Ricardo & Zafiro */
     font-weight: 400;
     text-align: center;
-    margin-top: 20px;
+    margin-top: -25px;
     margin-bottom: 5px;
+	/* Layering safety: ensures the text stays on top of the image container */
+    position: relative;
+    z-index: 10;
+	opacity: 0.75;
 }
 
 .serif-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.8rem;
-    font-style: italic;
+    font-family: 'WeddingRegular', serif;
+    font-size: 2.8rem;
+    font-style: normal;
     font-weight: 400;
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+	margin-top: -10px;
     margin-bottom: 25px;
+	opacity: 0.75;
 }
 
 .body-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'WeddingCursive', sans-serif;
     font-size: 1rem;
     font-weight: 300;
     text-align: center;
     max-width: 90%;
     margin: 0 auto 20px auto;
+	opacity: 0.75;
 }
 
 .parents-list {
@@ -67,9 +86,31 @@ body {
 }
 
 .parents-names {
-    font-family: 'Playfair Display', serif;
+    font-family: 'WeddingRegular', serif;
     font-size: 1.1rem;
     font-weight: 600;
     line-height: 1.8;
     margin-top: 15px;
+	opacity: 0.75;
+}
+
+/* --- 3. HERO SECTION & ENVELOPE STYLES --- */
+.hero-section {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center;
+    padding-top: 40px;      /* Gives it some breathing room from the top of the screen */
+    padding-bottom: 0px;
+}
+
+
+.envelope-img {
+    width: 85%;             /* Keeps it perfectly proportional on mobile screens */
+    max-width: 450px;       /* Prevents it from getting too massive on desktop screens */
+    height: auto;           /* Maintains the aspect ratio so it doesn't distort */
+    display: block;
+    
+    /* Subtle shadow to give it depth against your textured background */
+    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15)); 
 }
