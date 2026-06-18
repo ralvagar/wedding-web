@@ -46,13 +46,12 @@ body {
 }
 
 /* --- 2. TYPOGRAPHY HOOKS --- */
-.script-title {
+.script-title { /* Ricardo & Zafiro */
     font-family: 'WeddingCursive', cursive;
-	/* 1. FLUID TYPOGRAPHY: minimum size, preferred size (10% of screen width), maximum size */
-    font-size: clamp(2rem, 10vw, 4.5rem);
+	/* 1. FLUID TYPOGRAPHY: Minimum 1.8rem for mobile, hits ~3.5rem on standard screens, maxes at 4.5rem */
+    font-size: clamp(1.8rem, 5.5vw, 3.5rem);
     /* 2. FORCE SINGLE LINE: Prevents wrapping */
     white-space: nowrap;
-    font-size: 3.5rem; /* Large and elegant for Ricardo & Zafiro */
     font-weight: 400;
     text-align: center;
     margin-top: -25px;
@@ -63,13 +62,12 @@ body {
 	opacity: 0.75;
 }
 
-.serif-subtitle {
+.serif-subtitle { /* Nos casamos */
     font-family: 'WeddingRegular', serif;
-	/* FLUID TYPOGRAPHY: exactly half the 'vw' of the title to lock the scale (5vw vs 10vw) */
-    font-size: clamp(1.3rem, 4.3vw, 3.8rem);
+	/* FLUID TYPOGRAPHY: Minimum 1.2rem for mobile, hits ~2.8rem on standard screens, maxes at 3.8rem */
+    font-size: clamp(1.2rem, 4.4vw, 2.8rem);
     /* FORCE SINGLE LINE */
     white-space: nowrap;
-    font-size: 2.8rem;
     font-style: normal;
     font-weight: 400;
     text-align: center;
@@ -78,25 +76,17 @@ body {
 	opacity: 0.75;
 }
 
-.body-text {
-    font-family: 'WeddingCursive', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto 20px auto;
-	opacity: 0.75;
-}
-.body-text {
+.body-text { /* Frase */
     font-family: 'WeddingCursive', cursive;
     
-    /* FLUID TYPOGRAPHY: Keeps it proportionally smaller than the 5vw subtitle */
-    font-size: clamp(0rem, 3vw, 2.5rem); 
+    /* FLUID TYPOGRAPHY: Minimum 1rem for mobile, hits ~1.5rem on standard screens, maxes at 2rem */
+    font-size: clamp(1rem, 2.4vw, 1.5rem);
     font-weight: 300;
     text-align: center;
     max-width: 90%;
     margin: 0 auto 20px auto;
     opacity: 0.75;
+    
     /* Controls the vertical space between your jump lines */
     line-height: 1.4; 
 }
