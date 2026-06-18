@@ -26,7 +26,7 @@ body {
     background-color: #f9f9f9; 
     
     /* The path to your massive texture image */
-    background-image: url(C:/Users/Ricardo/Desktop/wedding-invite-web/assets/); 
+    background-image: url('../assets/bg-texture.jpg'); 
     
     /* Starts the image at the very top center of the screen */
     background-position: top center; 
@@ -49,12 +49,12 @@ body {
 .script-title { /* Ricardo & Zafiro */
     font-family: 'WeddingCursive', cursive;
 	/* 1. FLUID TYPOGRAPHY: Minimum 1.8rem for mobile, hits ~3.5rem on standard screens, maxes at 4.5rem */
-    font-size: clamp(3.5rem, 5.5vw, 3.5rem);
+    font-size: clamp(3rem, 5.5vw, 3.5rem);
     /* 2. FORCE SINGLE LINE: Prevents wrapping */
     white-space: nowrap;
     font-weight: 400;
     text-align: center;
-    margin-top: -25px;
+    margin-top: -10px;
     margin-bottom: 5px;
 	/* Layering safety: ensures the text stays on top of the image container */
     position: relative;
@@ -65,7 +65,7 @@ body {
 .serif-subtitle { /* Nos casamos */
     font-family: 'WeddingRegular', serif;
 	/* FLUID TYPOGRAPHY: Minimum 1.2rem for mobile, hits ~2.8rem on standard screens, maxes at 3.8rem */
-    font-size: clamp(2.8rem, 4.4vw, 2.8rem);
+    font-size: clamp(2.3rem, 4.4vw, 2.8rem);
     /* FORCE SINGLE LINE */
     white-space: nowrap;
     font-style: normal;
@@ -91,20 +91,6 @@ body {
     line-height: 1.4; 
 }
 
-.parents-list {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.parents-names {
-    font-family: 'WeddingRegular', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.8;
-    margin-top: 15px;
-	opacity: 0.75;
-}
-
 /* --- 3. HERO SECTION & ENVELOPE STYLES --- */
 .hero-section {
     width: 100%;
@@ -117,11 +103,84 @@ body {
 
 
 .envelope-img {
-    width: 85%;             /* Keeps it perfectly proportional on mobile screens */
+    width: 100%;             /* Keeps it perfectly proportional on mobile screens */
     max-width: 450px;       /* Prevents it from getting too massive on desktop screens */
     height: auto;           /* Maintains the aspect ratio so it doesn't distort */
     display: block;
     
     /* Subtle shadow to give it depth against your textured background */
-    filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.15)); 
+    filter: drop-shadow(0px 8px 5px rgba(0, 0, 0, .50)); 
+}
+
+/* --- 4. DETAILS CARD STYLES --- */
+.info-card {
+    /* 1. RESPONSIVE BINDING & CEILING */
+    width: 80%;
+    max-width: 350px; /* Caps the width on desktop so it never upscales */
+    margin: 80px auto 40px auto;
+    /* 2. PROPORTIONAL SCALE DOWN: Uses the exact 693x784 image dimensions */
+    aspect-ratio: 693 / 784;
+    /* Layout alignment */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Responsive padding so text has breathing room as the box shrinks */
+    padding: 6%; 
+    box-sizing: border-box;
+
+    /* Background Texture Setup */
+    background-image: url('../assets/text_square_01.jpg');
+    background-size: cover; /* Ensures the texture fits entirely without cropping */
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* Subtle aesthetics */
+    border-radius: 4px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, .50);
+}
+
+/* "En Compañia de:" */
+.card-intro {
+    font-family: 'WeddingRegular', serif;
+    font-size: clamp(1.7rem, 3.5vw, 1.8rem);
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.8);
+    margin-top: -25px;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+}
+
+/* "Nuestros Padres" */
+.card-parents-heading {
+    font-family: 'WeddingCursive', cursive;
+    font-size: clamp(1.7rem, 4vw, 1.8rem);
+    white-space: nowrap;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.85);
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* The Names */
+.card-parents-names {
+    font-family: 'WeddingRegular', serif;
+    font-size: clamp(1.2rem, 2.2vw, 1.3rem);
+    white-space: nowrap;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.4;
+    color: rgba(0, 0, 0, 0.75);
+    margin: 0;
+    letter-spacing: -.8px;
+}
+
+/* The Subtle Divider Dash "-" */
+.card-divider {
+    font-family: 'WeddingRegular', serif;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0px 0;
+    letter-spacing: -.8px;
 }
