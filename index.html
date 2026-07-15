@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Tienes una Invitación</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="front-page-body">
+
+    <!-- THE ENVELOPE CONTAINER -->
+    <div class="envelope-wrapper">
+        <h2 class="envelope-greeting">Para:</h2>
+        <!-- JavaScript will inject the guest's name into this span -->
+        <h1 id="guest-name" class="envelope-name">Nuestros Invitados</h1>
+        
+        <button id="open-envelope-btn" class="open-btn">Abrir Invitación</button>
+    </div>
+
+    <!-- THE JAVASCRIPT MAGIC -->
+    <script>
+        // 1. Check the URL for a name (e.g., ?guest=Familia+García)
+        const urlParams = new URLSearchParams(window.location.search);
+        const guest = urlParams.get('guest');
+
+        // 2. If a name exists in the link, replace the default text
+        if (guest) {
+            document.getElementById('guest-name').innerText = guest;
+        }
+
+        // 3. When they click "Abrir", trigger animation and go to the real invite
+        document.getElementById('open-envelope-btn').addEventListener('click', function() {
+            // (We will add the CSS animation trigger here next!)
+            
+            // Wait 1.5 seconds for the animation to play, then redirect:
+            setTimeout(() => {
+                window.location.href = 'invitation.html' + window.location.search;
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
