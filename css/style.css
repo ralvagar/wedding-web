@@ -33,8 +33,7 @@ body {
     /* -- SIZING RESTRICTIONS -- */
     width: 100%; 
     max-width: 18.29cm; 
-    margin: 0 auto; 
-    min-height: 11191px; 
+    margin: 0 auto;
     padding: 0;
     /* Adds a sleek drop-shadow behind the invitation on desktop */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.4); 
@@ -88,6 +87,23 @@ body {
     z-index: 2; 
     text-align: center;
     color: #6a704c;
+}
+
+.rsvp-section {
+    /* Normal document flow so everything inside scrolls together */
+    position: sticky;
+    top: -5%;
+    z-index: 1;
+}
+
+.final-section {
+    /* Normal document flow so everything inside scrolls together */
+    position: relative; 
+    z-index: 6; 
+    text-align: center;
+    color: #6a704c;
+    line-height: 0; 
+    font-size: 0;
 }
 
 /* --- LAYER 4: EVENTS SECTION STYLING --- */
@@ -190,16 +206,6 @@ body {
     margin-top: 5%;   
     text-align: center;
     z-index: 10;
-}
-
-.date-img {
-    width: 85%; 
-    max-width: 420px; 
-    height: auto;
-    display: block;
-    margin: 0 auto; 
-    position: relative; 
-    z-index: 1;
 }
 
 /* Pins all the text and timer directly OVER the green card image */
@@ -321,6 +327,109 @@ body {
     margin: 0 auto;
     z-index: 1;
 }
+
+.greenbg-img {
+    width: 100%; /* Forces the image to span the full 18.29cm width cleanly */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    position: relative; 
+    margin-top: -10%;
+    z-index: 1;
+}
+
+.finalus-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    
+    /* Pulls the paper UP over the top photo */
+    margin-top: -20%; 
+    
+    position: relative; 
+    z-index: 2;
+} 
+
+/* --- DETAILS SECTION: COLLAGE LAYOUT --- */
+.details-text {
+    position: relative; 
+    width: 100%;
+    /* Adds breathing room below your last location button */
+    margin-top: 15%; 
+    z-index: 10;
+    /* Extra padding at the bottom so the final image doesn't get cut off */
+    padding-bottom: 15%; 
+}
+
+/* --- 1. THE WRAPPERS (These control placement & hold the buttons) --- */
+.program {
+    max-width: 55%;
+    position: relative; /* Anchors the content inside */
+    margin-left: auto; 
+    margin-right: 3%;  
+    z-index: 1;
+}
+    .dress {
+        max-width: 55%;
+        position: relative; /* Anchors the outfit button! */
+        margin-left: 0;  
+        margin-top: -80%;   
+        z-index: 2; 
+    }
+
+    .gifts {
+        max-width: 55%;
+        position: relative; /* Anchors the gifts button! */
+        margin-left: auto; 
+        margin-right: 3%;
+        margin-top: -40%;  
+        z-index: 1; 
+    }
+
+    /* --- 2. THE IMAGES (Forces them to neatly fill their wrappers) --- */
+    .program-img, 
+    .dress-img, 
+    .gifts-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0; /* Clears any old centering conflicts */
+    }
+
+    /* --- 3. THE BUTTONS (Locked safely inside their wrappers) --- */
+    .outfit-btn-link, 
+    .gifts-btn-link {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-45%); /* Keeps them perfectly centered */
+        width: 50%; /* Size of the button relative to the card */
+        z-index: 10;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .outfit-btn-link:hover, 
+    .gifts-btn-link:hover {
+        transform: translateX(-45%) scale(1.05); 
+        opacity: 0.9;
+    }
+
+    /* Fine-tune exactly where they sit vertically on the cards */
+    .outfit-btn-link {
+        bottom: 7%; 
+    }
+
+    .gifts-btn-link {
+        bottom: 7%; 
+    }
+
+    /* Prevents the button images from stretching */
+    .outfit-btn-img, 
+    .gifts-btn-img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 /* --- 4. TYPOGRAPHY HOOKS --- */
 .script-title { /* Ricardo & Zafiro */
     font-family: 'WeddingCursive', cursive;
@@ -531,5 +640,82 @@ body {
         height: auto;
         display: block;
         margin: -10% auto 0 auto;
+    }
+    /* --- DETAILS SECTION: COLLAGE LAYOUT --- */
+    .details-text {
+        position: relative; 
+        width: 100%;
+        margin-top: 10%; 
+        z-index: 10;
+        padding-bottom: 15%; 
+    }
+
+    /* --- 1. THE WRAPPERS (These control placement & hold the buttons) --- */
+    .program {
+        max-width: 55%;
+        position: relative; /* Anchors the content inside */
+        margin-left: auto; 
+        margin-right: 3%;  
+        z-index: 1;
+    }
+    .dress {
+        max-width: 55%;
+        position: relative; /* Anchors the outfit button! */
+        margin-left: 0;  
+        margin-top: -80%;   
+        z-index: 2; 
+    }
+
+    .gifts {
+        max-width: 55%;
+        position: relative; /* Anchors the gifts button! */
+        margin-left: auto; 
+        margin-right: 3%;
+        margin-top: -40%;  
+        z-index: 1; 
+    }
+
+    /* --- 2. THE IMAGES (Forces them to neatly fill their wrappers) --- */
+    .program-img, 
+    .dress-img, 
+    .gifts-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0; /* Clears any old centering conflicts */
+    }
+
+    /* --- 3. THE BUTTONS (Locked safely inside their wrappers) --- */
+    .outfit-btn-link, 
+    .gifts-btn-link {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-45%); /* Keeps them perfectly centered */
+        width: 50%; /* Size of the button relative to the card */
+        z-index: 10;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .outfit-btn-link:hover, 
+    .gifts-btn-link:hover {
+        transform: translateX(-45%) scale(1.05); 
+        opacity: 0.9;
+    }
+
+    /* Fine-tune exactly where they sit vertically on the cards */
+    .outfit-btn-link {
+        bottom: 7%; 
+    }
+
+    .gifts-btn-link {
+        bottom: 7%; 
+    }
+
+    /* Prevents the button images from stretching */
+    .outfit-btn-img, 
+    .gifts-btn-img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 }
