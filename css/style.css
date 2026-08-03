@@ -77,10 +77,106 @@ body {
 
 .middle-section {
     /* Normal document flow so everything inside scrolls together */
+    position: sticky;
+    top: -5%;
+    z-index: 1;
+}
+
+.last-section {
+    /* Normal document flow so everything inside scrolls together */
     position: relative; 
-    z-index: 1; 
+    z-index: 2; 
     text-align: center;
     color: #6a704c;
+}
+
+/* --- LAYER 4: EVENTS SECTION STYLING --- */
+.events-container {
+    position: relative; /* Pulls content up into the second tear texture smoothly */
+    margin-top: -344%;
+    z-index: 10;
+    
+}
+
+.event-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%; /* Vertical space between each event card */
+}
+
+/* Green Boxes: Event Category Icons */
+.event-icon1 {
+    width: clamp(75px, 12vw, 100px);
+    height: auto;
+    display: block;
+    margin: 0 auto 3% auto;
+    position: relative;
+    z-index: 2;
+}
+
+.event-icon2 {
+    width: clamp(55px, 12vw, 80px);
+    height: auto;
+    display: block;
+    margin: 0 auto 3% auto;
+    position: relative;
+    z-index: 2;
+}
+
+.event-icon3 {
+    width: clamp(50px, 12vw, 70px);
+    height: auto;
+    display: block;
+    margin: 0 auto 2% auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Red Boxes: Text Typography */
+.event-text-block {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 15px;
+}
+
+.event-title {
+    font-family: 'WeddingCursive', cursive;
+    font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.event-time {
+    font-family: 'WeddingRegular', serif;
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    margin-top: -2.5%;
+}
+
+.event-location {
+    font-family: 'WeddingRegular', serif;
+    font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+    margin-top: -2.5%;
+    letter-spacing: -2%
+}
+
+/* Yellow Boxes: Clickable Location Image Buttons */
+.location-btn-link {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.location-btn-link:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.location-btn-img {
+    width: clamp(160px, 38vw, 230px);
+    height: auto;
+    display: block;
+    margin: -5% auto 0 auto;
 }
 
 .main-text {
@@ -193,13 +289,25 @@ body {
     z-index: 2;
 } 
 
+.tear2-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    
+    /* Pulls the paper UP over the top photo */
+    margin-top: -20%; 
+    
+    position: relative; 
+    z-index: 2;
+} 
+
 .usfoto2-img {
     width: 100%; /* Forces the image to span the full 18.29cm width cleanly */
     max-width: 100%;
     height: auto;
     display: block;
-    margin-top: 8%; 
-    padding-top: 0;
+    margin-top: 4%; 
     position: relative; 
     z-index: 1;
 }
@@ -332,4 +440,96 @@ body {
     width: clamp(22px, 5vw, 35px);
     height: clamp(22px, 5vw, 35px);
     fill: white;
+}
+
+/* 2. Overriding value for Smartphones (screens 768px wide or smaller) */
+@media (max-width: 768px) {
+    /* --- LAYER 4: EVENTS SECTION STYLING --- */
+    .events-container {
+        position: relative; /* Pulls content up into the second tear texture smoothly */
+        margin-top: -346%;
+        z-index: 10;
+        
+    }
+
+    .event-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10%; /* Vertical space between each event card */
+    }
+
+    /* Green Boxes: Event Category Icons */
+    .event-icon1 {
+        width: clamp(65px, 12vw, 80px);
+        height: auto;
+        display: block;
+        margin: 0 auto 3% auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .event-icon2 {
+        width: clamp(50px, 12vw, 80px);
+        height: auto;
+        display: block;
+        margin: 0 auto 3% auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .event-icon3 {
+        width: clamp(45px, 12vw, 80px);
+        height: auto;
+        display: block;
+        margin: 0 auto 2% auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Red Boxes: Text Typography */
+    .event-text-block {
+        text-align: center;
+        padding: 0 20px;
+        margin-bottom: 15px;
+    }
+
+    .event-title {
+        font-family: 'WeddingCursive', cursive;
+        font-size: clamp(1.7rem, 5.5vw, 2.8rem);
+        font-weight: 400;
+        line-height: 1.1;
+    }
+
+    .event-time {
+        font-family: 'WeddingRegular', serif;
+        font-size: clamp(1.4rem, 2.8vw, 1.6rem);
+        margin-top: -2.5%;
+    }
+
+    .event-location {
+        font-family: 'WeddingRegular', serif;
+        font-size: clamp(1.1rem, 2.3vw, 1.35rem);
+        margin-top: -2.5%;
+        letter-spacing: -2%
+    }
+
+    /* Yellow Boxes: Clickable Location Image Buttons */
+    .location-btn-link {
+        display: inline-block;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        cursor: pointer;
+    }
+
+    .location-btn-link:hover {
+        transform: scale(1.03);
+        opacity: 0.9;
+    }
+
+    .location-btn-img {
+        width: clamp(95px, 35vw, 230px);
+        height: auto;
+        display: block;
+        margin: -10% auto 0 auto;
+    }
 }

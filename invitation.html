@@ -19,14 +19,11 @@
 
     <!-- The Content Block (This whole section scrolls up together) -->
     <section class="intro-section">
-        
         <!-- The tear image is right at the top of the content block -->
-        <img src="assets/02_1st_tear.webp" class="tear-img">
-        
+        <img src="assets/02_1st_tear.webp" class="tear-img"> 
         <section class="main-text">
             <h2 class="serif-subtitle">¡Nos Casamos!</h2>
-            <h1 class="script-title">Ricardo & Zafiro</h1>
-            
+            <h1 class="script-title">Ricardo & Zafiro</h1>     
             <!-- --- START MUSIC PLAYER --- -->
             <div class="music-player">
                 <h4 class="player-title">Dale play a nuestra cancion</h4>
@@ -61,44 +58,88 @@
             <!-- --- END MUSIC PLAYER --- -->
         </section>
         <section class="date-text">
-
         <!--  The Green Date Card Image -->
-        <img src="assets/06_date.webp" alt="Sábado 24 Octubre 2026" class="date-img">
-        <div class="date-overlay-content">
-        <!-- Top text -->
-        <div class="top-invitation-text">
-            Con la bendición de Dios y nuestros padres,<br>tenemos el honor de invitarte a nuestra boda.
-        </div>
-        <!-- Countdown container at the bottom of the card -->
-        <div class="countdown-container">
-            <div class="faltan-title">FALTAN</div>
-            <div class="countdown-timer" id="countdown">
-                <div class="time-block">
-                    <span id="days">00</span>
-                    <span class="label">Dias</span>
+            <img src="assets/06_date.webp" alt="Sábado 24 Octubre 2026" class="date-img">
+            <div class="date-overlay-content">
+            <!-- Top text -->
+                <div class="top-invitation-text">
+                    Con la bendición de Dios y nuestros padres,<br>tenemos el honor de invitarte a nuestra boda.
                 </div>
-                <span class="separator">:</span>
-                <div class="time-block">
-                    <span id="hours">00</span>
-                    <span class="label">Horas</span>
-                </div>
-                <span class="separator">:</span>
-                <div class="time-block">
-                    <span id="minutes">00</span>
-                    <span class="label">Min</span>
-                </div>
-                <span class="separator">:</span>
-                <div class="time-block">
-                    <span id="seconds">00</span>
-                    <span class="label">Seg</span>
+                <!-- Countdown container at the bottom of the card -->
+                <div class="countdown-container">
+                    <div class="faltan-title">FALTAN</div>
+                    <div class="countdown-timer" id="countdown">
+                            <div class="time-block">
+                                <span id="days">00</span>
+                                <span class="label">Dias</span>
+                            </div>
+                            <span class="separator">:</span>
+                            <div class="time-block">
+                                <span id="hours">00</span>
+                                <span class="label">Horas</span>
+                            </div>
+                            <span class="separator">:</span>
+                            <div class="time-block">
+                                <span id="minutes">00</span>
+                                <span class="label">Min</span>
+                            </div>
+                            <span class="separator">:</span>
+                            <div class="time-block">
+                                <span id="seconds">00</span>
+                                <span class="label">Seg</span>
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
     </section>
     
     <section class="middle-section">
         <img src="assets/03_US_Foto2.jpg" alt="Ricardo y Zafiro 2" class="usfoto2-img">
+    </section>
+    <!-- --- SECTION 4: CONTENT 2 & TEAR 2 (Layer 4) --- -->
+    <section class="last-section">
+        <img src="assets/03_2st_tear_v2.webp" alt="Details" class="tear2-img">
+        <div class="events-container">
+            <!-- EVENT 1: Ceremonia Religiosa -->
+            <div class="event-item">
+                <img src="assets/church.webp" alt="Ceremonia Religiosa" class="event-icon1">
+                <div class="event-text-block">
+                    <h2 class="event-title">Ceremonia Religiosa</h2>
+                    <p class="event-time">3:00 pm</p>
+                    <p class="event-location">"Parroquia Sagrado Corazón de Jesús"</p>
+                </div>
+                <a href="https://maps.app.goo.gl/cJRtxFD6h9nJVfGp8" target="_blank" class="location-btn-link">
+                    <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
+                </a>
+            </div>
+            <!-- EVENT 2: Civil -->
+            <div class="event-item">
+                
+                <img src="assets/pen.webp" alt="Civil" class="event-icon2">
+                <div class="event-text-block">
+                    <h2 class="event-title">Civil</h2>
+                    <p class="event-time">5:00 pm</p>
+                    <p class="event-location">"Princess Wedding Gardens"</p>
+                </div>
+                <a href="https://maps.app.goo.gl/DjsbpYgwzKqxDwWD8" target="_blank" class="location-btn-link">
+                    <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
+                </a>
+            </div>
+            <!-- EVENT 3: Recepción -->
+            <div class="event-item">
+                <img src="assets/glass.webp" alt="Recepción" class="event-icon3">
+                <div class="event-text-block">
+                    <h2 class="event-title">Recepción</h2>
+                    <p class="event-time">7:00 pm</p>
+                    <p class="event-location">"Princess Wedding Gardens"</p>
+                </div>
+                <a href="https://maps.app.goo.gl/DjsbpYgwzKqxDwWD8" target="_blank" class="location-btn-link">
+                    <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
+                </a>
+            </div>
+
+        </div>
     </section>
     <!-- Link to your JS logic -->
     <script src="js/player.js"></script>
