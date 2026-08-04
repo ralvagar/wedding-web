@@ -12,164 +12,194 @@
 </head>
 <body>
 
-    <!-- Intro (Only the background photo goes here) -->
-    <header class="hero-section">
+    <!-- --- SECTION 1: TOP IMAGE --- -->
+    <header class="top-img">
         <img src="assets/01_US_Foto1.jpg" alt="Ricardo y Zafiro" class="usfoto-img">
     </header>
-
-    <!-- The Content Block (This whole section scrolls up together) -->
+    <!-- --- SECTION 2: INTRO --- -->
     <section class="intro-section">
-        <!-- The tear image is right at the top of the content block -->
-        <img src="assets/02_1st_tear.webp" class="tear-img"> 
-        <section class="main-text">
-            <h2 class="serif-subtitle">¡Nos Casamos!</h2>
-            <h1 class="script-title">Ricardo & Zafiro</h1>     
-            <!-- --- START MUSIC PLAYER --- -->
-            <div class="music-player">
-                <h4 class="player-title">Dale play a nuestra cancion</h4>
+        <div class="tear-container intro-pull-up">
+            <img src="assets/02_1st_tear.webp" alt="Tear effect" class="tear-bg-img"> 
+            
+            <!-- THE INVISIBLE SQUARE -->
+            <div class="tear-overlay intro-overlay">
                 
-                <div class="progress-bar-container">
-                    <span id="current-time">00:00</span>
-                    <input type="range" id="seek-slider" max="100" value="0">
-                    <span id="duration">00:00</span>
+                <div class="main-text">
+                    <h2 class="serif-subtitle">¡Nos Casamos!</h2>
+                    <h1 class="script-title">Ricardo & Zafiro</h1>     
+                    
+                    <!-- MUSIC PLAYER -->
+                    <div class="music-player">
+                        <h4 class="player-title">Dale play a nuestra canción</h4>
+                        <div class="progress-bar-container">
+                            <span id="current-time">00:00</span>
+                            <input type="range" id="seek-slider" max="100" value="0" aria-label="Control de tiempo">
+                            <span id="duration">00:00</span>
+                        </div>
+                        <div class="player-controls">
+                            <span class="side-icon" id="prev-btn" aria-label="Anterior">
+                                <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                            </span>
+                            <button id="play-pause-btn" aria-label="Reproducir o pausar">
+                                <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <svg id="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                            </button>
+                            <span class="side-icon" id="next-btn" aria-label="Siguiente">
+                                <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                            </span>
+                        </div>
+                        <audio id="wedding-song" src="assets/Tennessee_Whiskey.mp3" preload="metadata"></audio>
+                    </div>
                 </div>
 
-                <div class="player-controls">
-                    <!-- Left Icons -->
-                    <span class="side-icon" id="prev-btn">
-                        <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-                    </span>
-                    <!-- Center Play/Pause Button -->
-                    <button id="play-pause-btn">
-                        <!-- Play Triangle -->
-                        <svg id="play-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                        <!-- Pause Bars (Hidden by default) -->
-                        <svg id="pause-icon" viewBox="0 0 24 24" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                    </button>
-                    <!-- Right Icons -->
-                    <span class="side-icon" id="next-btn">
-                        <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
-                    </span>
-                </div>
+                <!-- DATE & COUNTDOWN -->
+                <section class="date-text">
+                    <img src="assets/06_date.webp" alt="Fondo fecha" class="date-img">
+                    <div class="date-overlay-content">
+                        <div class="top-invitation-text">
+                            Con la bendición de Dios y nuestros padres,<br>tenemos el honor de invitarte a nuestra boda.
+                        </div>
+                        <div class="countdown-container">
+                            <div class="faltan-title">FALTAN</div>
+                            <div class="countdown-timer" id="countdown">
+                                <div class="time-block">
+                                    <span id="days">00</span>
+                                    <span class="label">Días</span>
+                                </div>
+                                <span class="separator">:</span>
+                                <div class="time-block">
+                                    <span id="hours">00</span>
+                                    <span class="label">Horas</span>
+                                </div>
+                                <span class="separator">:</span>
+                                <div class="time-block">
+                                    <span id="minutes">00</span>
+                                    <span class="label">Min</span>
+                                </div>
+                                <span class="separator">:</span>
+                                <div class="time-block">
+                                    <span id="seconds">00</span>
+                                    <span class="label">Seg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div> <!-- End Intro Overlay -->
+        </div> <!-- End Intro Container -->
+    </section>
+
+    <!-- --- SECTION 3: MIDDLE PHOTO --- -->
+    <section class="middle-section">
+        <img src="assets/03_US_Foto2.jpg" alt="Ricardo y Zafiro abrazados" class="usfoto2-img">
+    </section>
+
+    <!-- --- SECTION 4: EVENTS & DETAILS --- -->
+    <section class="last-section">
+        <div class="tear-container events-pull-up">
+            <img src="assets/03_2st_tear_v2.webp" alt="Tear transition" class="tear-bg-img">
+            
+            <!-- THE INVISIBLE SQUARE -->
+            <div class="tear-overlay events-overlay">
                 
-                <!-- The actual audio file (Hidden) -->
-                <audio id="wedding-song" src="assets/Tennessee_Whiskey.mp3" preload="metadata"></audio>
-            </div>
-            <!-- --- END MUSIC PLAYER --- -->
-        </section>
-        <section class="date-text">
-        <!--  The Green Date Card Image -->
-            <img src="assets/06_date.webp" alt="Sábado 24 Octubre 2026" class="date-img">
-            <div class="date-overlay-content">
-            <!-- Top text -->
-                <div class="top-invitation-text">
-                    Con la bendición de Dios y nuestros padres,<br>tenemos el honor de invitarte a nuestra boda.
+                <!-- EVENTS -->
+                <div class="events-container">
+                    <div class="event-item">
+                        <img src="assets/church.webp" alt="Icono Iglesia" class="event-icon1">
+                        <div class="event-text-block">
+                            <h2 class="event-title">Ceremonia Religiosa</h2>
+                            <p class="event-time">3:00 pm</p>
+                            <p class="event-location">"Parroquia Sagrado Corazón de Jesús"</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/cJRtxFD6h9nJVfGp8" target="_blank" class="location-btn-link" aria-label="Ver ubicación de la iglesia">
+                            <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
+                        </a>
+                    </div>
+                    
+                    <div class="event-item">
+                        <img src="assets/pen.webp" alt="Icono Pluma" class="event-icon2">
+                        <div class="event-text-block">
+                            <h2 class="event-title">Civil</h2>
+                            <p class="event-time">5:00 pm</p>
+                            <p class="event-location">"Princess Wedding Gardens"</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/DjsbpYgwzKqxDwWD8" target="_blank" class="location-btn-link" aria-label="Ver ubicación del civil">
+                            <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
+                        </a>
+                    </div>
+                    
+                    <div class="event-item">
+                        <img src="assets/glass.webp" alt="Icono Copas" class="event-icon3">
+                        <div class="event-text-block">
+                            <h2 class="event-title">Recepción</h2>
+                            <p class="event-time">7:00 pm</p>
+                            <p class="event-location">"Princess Wedding Gardens"</p>
+                        </div>
+                        <a href="https://maps.app.goo.gl/DjsbpYgwzKqxDwWD8" target="_blank" class="location-btn-link" aria-label="Ver ubicación de la recepción">
+                            <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
+                        </a>
+                    </div>
                 </div>
-                <!-- Countdown container at the bottom of the card -->
-                <div class="countdown-container">
-                    <div class="faltan-title">FALTAN</div>
-                    <div class="countdown-timer" id="countdown">
-                            <div class="time-block">
-                                <span id="days">00</span>
-                                <span class="label">Dias</span>
-                            </div>
-                            <span class="separator">:</span>
-                            <div class="time-block">
-                                <span id="hours">00</span>
-                                <span class="label">Horas</span>
-                            </div>
-                            <span class="separator">:</span>
-                            <div class="time-block">
-                                <span id="minutes">00</span>
-                                <span class="label">Min</span>
-                            </div>
-                            <span class="separator">:</span>
-                            <div class="time-block">
-                                <span id="seconds">00</span>
-                                <span class="label">Seg</span>
-                            </div>
+
+                <!-- DETAILS COLLAGE -->
+                <section class="details-text">
+                    <div class="program">
+                        <img src="assets/07_program.webp" alt="Programa del evento" class="program-img">
+                    </div>
+                    <div class="dress">
+                        <img src="assets/08_outfit.webp" alt="Código de vestimenta" class="dress-img">
+                        <a href="https://pin.it/6xUgF2chI" target="_blank" class="outfit-btn-link" aria-label="Ver ideas de outfits">
+                            <img src="assets/outfits_btn.webp" alt="Ver outfits" class="outfit-btn-img">
+                        </a>
+                    </div>
+                    <div class="gifts">
+                        <img src="assets/08_regalos.webp" alt="Mesa de regalos" class="gifts-img">
+                        <a href="https://www.amazon.com.mx/wedding/share/ricardoyzafiro" target="_blank" class="gifts-btn-link" aria-label="Ver lista de regalos en Amazon">
+                            <img src="assets/lista_btn.webp" alt="Ver lista" class="gifts-btn-img">
+                        </a>
+                    </div>
+                </section>
+
+            </div> <!-- End Events Overlay -->
+        </div> <!-- End Events Container -->
+    </section>
+
+    <!-- --- SECTION 5: RSVP & PASES --- -->
+    <section class="rsvp-section">
+        <!-- THE INVISIBLE SQUARE FOR GREEN BACKGROUND -->
+        <div class="tear-container rsvp-overlay-pull-up">
+            <img src="assets/04_green_bg.webp" alt="Fondo verde oscuro" class="tear-bg-img">
+            <div class="tear-overlay rsvp-overlay">
+                <div class="pases-container">
+                    <img src="assets/pases.webp" alt="Boletos" class="tickets-icon">
+                    <h2 class="pases-title">Pases</h2>
+                    <p class="pases-subtitle">Tenemos reservados</p>
+                    
+                    <div class="lugares-wrapper">
+                        <img src="assets/lugares.webp" alt="Marco de lugares" class="lugares-img">
+                        <span id="guest-tickets" class="tickets-number">2</span>
+                    </div>
+                    
+                    <p class="adults-text">Evento exclusivo para adultos</p>
+                </div>
+                <div class="envelope-container">
+                    <img src="assets/rsvp.webp" alt="Sobre RSVP" class="envelope-img">
+                    <div class="envelope-content">
+                        <a href="YOUR_WHATSAPP_OR_FORM_LINK_HERE" target="_blank" class="confirm-btn-link" aria-label="Confirmar asistencia">
+                            <img src="assets/confirm_btn.webp" alt="Confirma aquí" class="confirm-btn-img">
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
-    </section>
-    <!-- --- SECTION 2: Second Photo --- -->
-    <section class="middle-section">
-        <img src="assets/03_US_Foto2.jpg" alt="Ricardo y Zafiro 2" class="usfoto2-img">
-    </section>
-    <!-- --- SECTION 3: CONTENT 2 & TEAR 2 (Layer 4) --- -->
-    <section class="last-section">
-        <img src="assets/03_2st_tear_v2.webp" alt="Details" class="tear2-img">
-        <div class="events-container">
-            <!-- EVENT 1: Ceremonia Religiosa -->
-            <div class="event-item">
-                <img src="assets/church.webp" alt="Ceremonia Religiosa" class="event-icon1">
-                <div class="event-text-block">
-                    <h2 class="event-title">Ceremonia Religiosa</h2>
-                    <p class="event-time">3:00 pm</p>
-                    <p class="event-location">"Parroquia Sagrado Corazón de Jesús"</p>
-                </div>
-                <a href="https://maps.app.goo.gl/cJRtxFD6h9nJVfGp8" target="_blank" class="location-btn-link">
-                    <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
-                </a>
-            </div>
-            <!-- EVENT 2: Civil -->
-            <div class="event-item">
-                
-                <img src="assets/pen.webp" alt="Civil" class="event-icon2">
-                <div class="event-text-block">
-                    <h2 class="event-title">Civil</h2>
-                    <p class="event-time">5:00 pm</p>
-                    <p class="event-location">"Princess Wedding Gardens"</p>
-                </div>
-                <a href="https://maps.app.goo.gl/DjsbpYgwzKqxDwWD8" target="_blank" class="location-btn-link">
-                    <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
-                </a>
-            </div>
-            <!-- EVENT 3: Recepción -->
-            <div class="event-item">
-                <img src="assets/glass.webp" alt="Recepción" class="event-icon3">
-                <div class="event-text-block">
-                    <h2 class="event-title">Recepción</h2>
-                    <p class="event-time">7:00 pm</p>
-                    <p class="event-location">"Princess Wedding Gardens"</p>
-                </div>
-                <a href="https://maps.app.goo.gl/DjsbpYgwzKqxDwWD8" target="_blank" class="location-btn-link">
-                    <img src="assets/ubicacion_btn.webp" alt="Ver ubicación" class="location-btn-img">
-                </a>
-            </div>
-
         </div>
-         <!-- New images to add start here --> 
-        <section class="details-text">
-            <div class="program">
-                <img src="assets/07_program.webp" alt="Program" class="program-img">
-            </div>
-            <div class="dress">
-                <img src="assets/08_outfit.webp" alt="Dress" class="dress-img">
-                <a href="https://pin.it/6xUgF2chI" target="_blank" class="outfit-btn-link">
-                    <img src="assets/outfits_btn.webp" alt="Ver outfits" class="outfit-btn-img">
-                </a>
-            </div>
-            <div class="gifts">
-                <img src="assets/08_regalos.webp" alt="Gifts" class="gifts-img">
-                <a href="https://www.amazon.com.mx/wedding/share/ricardoyzafiro" target="_blank" class="gifts-btn-link">
-                    <img src="assets/lista_btn.webp" alt="Ver lista" class="gifts-btn-img">
-                </a>
-            </div>
-        </section>
     </section>
-    <!-- --- SECTION 4: RSVP and Pases --- -->
-    <section class="rsvp-section">
-        <img src="assets/04_green_bg.webp" alt="Green Background" class="greenbg-img">
-    </section>
-    <!-- --- SECTION 5: Last Photo --- -->
+    <!-- --- SECTION 6: FINAL PHOTO ----->
     <section class="final-section">
-        <img src="assets/05_US_Foto3.webp" alt="Last Photo" class="finalus-img">
+        <img src="assets/05_US_Foto3.webp" alt="Ricardo y Zafiro sonriendo" class="finalus-img">
     </section>
-    <!-- Link to your JS logic -->
+
     <script src="js/player.js"></script>
     <script src="js/countdown.js"></script>
-
 </body>
 </html>
