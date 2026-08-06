@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const numberOfPasses = parseInt(ticketsElement.innerText.trim(), 10);
 
         // 3. Set your phone number (Numbers only, no + or spaces)
-        const phoneNumber = "528121217986"; 
+        const phoneNumber = "5218123949822"; 
         
         let customMessage = "";
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             customMessage = `¡Hola! Confirmo mi asistencia a la boda de Zafiro y Ricardo. Tengo 1 pase y mi nombre es:`;
         } else {
             // Plural message (2 or more)
-            customMessage = `¡Hola! Confirmo mi asistencia a la boda de Zafiro y Ricardo. Tenemos ${numberOfPasses} pases y nuestros nombres son:`;
+            customMessage = `¡Hola! Confirmo mi asistencia a la boda de Zafiro y Ricardo. Tenemos ${numberOfPasses} pases y mi nombre es:`;
         }
 
         // 5. Safely encode the message for the web and attach it to the button

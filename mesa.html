@@ -41,12 +41,29 @@
 
             <div class="bank-details">
                 <p>CLABE 012580015571060124</p>
+                <p>Tarj. 4152314075068257</p>
                 <p>BBVA Bancomer</p>
                 <p>Zafiro Longoria Alejandro</p>
             </div>
             
         </div>
     </main>
+<script>
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
 
+    // Disable common developer tools keyboard shortcuts
+    document.onkeydown = function(e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && e.key === "I") || 
+            (e.ctrlKey && e.shiftKey && e.key === "J") || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    };
+</script>
 </body>
 </html>

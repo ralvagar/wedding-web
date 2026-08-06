@@ -121,7 +121,7 @@
                 <!-- DETAILS COLLAGE -->
                 <section class="details-text">
                     <div class="program">
-                        <img src="assets/07_program.webp" alt="Programa del evento" class="program-img">
+                        <img src="assets/07_program_v2.webp" alt="Programa del evento" class="program-img">
                     </div>
                     <div class="dress">
                         <img src="assets/08_outfit.webp" alt="Código de vestimenta" class="dress-img">
@@ -131,7 +131,7 @@
                     </div>
                     <div class="gifts">
                         <img src="assets/08_regalos.webp" alt="Mesa de regalos" class="gifts-img">
-                        <a href="https://www.amazon.com.mx/wedding/share/ricardoyzafiro" target="_blank" class="gifts-btn-link" aria-label="Ver lista de regalos en Amazon">
+                        <a href="/mesa.html" target="_blank" class="gifts-btn-link" aria-label="Ver lista de regalos en Amazon">
                             <img src="assets/lista_btn.webp" alt="Ver lista" class="gifts-btn-img">
                         </a>
                     </div>
@@ -162,7 +162,7 @@
                 <div class="envelope-container">
                     <img src="assets/rsvp.webp" alt="Sobre RSVP" class="envelope-img">
                     <div class="envelope-content">
-                        <a href="YOUR_WHATSAPP_OR_FORM_LINK_HERE" target="_blank" class="confirm-btn-link" aria-label="Confirmar asistencia">
+                        <a href="#" id="whatsapp-rsvp-link" target="_blank" class="confirm-btn-link" aria-label="Confirmar asistencia">
                             <img src="assets/confirm_btn.webp" alt="Confirma aquí" class="confirm-btn-img">
                         </a>
                     </div>
@@ -178,5 +178,22 @@
     <script src="js/player.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/rsvp.js"></script>
+<script>
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable common developer tools keyboard shortcuts
+    document.onkeydown = function(e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && e.key === "I") || 
+            (e.ctrlKey && e.shiftKey && e.key === "J") || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    };
+</script>
 </body>
 </html>

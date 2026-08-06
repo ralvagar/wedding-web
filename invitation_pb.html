@@ -155,7 +155,7 @@
                     </div>
                     <div class="gifts">
                         <img src="assets/08_regalos.webp" alt="Mesa de regalos" class="gifts-img">
-                        <a href="https://www.amazon.com.mx/wedding/share/ricardoyzafiro" target="_blank" class="gifts-btn-link" aria-label="Ver lista de regalos en Amazon">
+                        <a href="/mesa.html" target="_blank" class="gifts-btn-link" aria-label="Ver lista de regalos en Amazon">
                             <img src="assets/lista_btn.webp" alt="Ver lista" class="gifts-btn-img">
                         </a>
                     </div>
@@ -202,5 +202,22 @@
     <script src="js/player.js"></script>
     <script src="js/countdown.js"></script>
     <script src="js/rsvp.js"></script>
+<script>
+    // Disable right-click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable common developer tools keyboard shortcuts
+    document.onkeydown = function(e) {
+        if (
+            e.key === "F12" || 
+            (e.ctrlKey && e.shiftKey && e.key === "I") || 
+            (e.ctrlKey && e.shiftKey && e.key === "J") || 
+            (e.ctrlKey && e.key === "U")
+        ) {
+            e.preventDefault();
+            return false;
+        }
+    };
+</script>
 </body>
 </html>
